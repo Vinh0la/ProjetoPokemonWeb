@@ -10,20 +10,15 @@ export default async function InfoDetails({params, }: { params: { slug: string};
     const response = await fetch(`https://pokeapi.com/api/v2/pokemon/${params.slug}`);
     const pokemon = await response.json();
 
-    return <div><h2>{pokemon.name}</h2></div>;
-}
-
-    
-function Pokemon() {
     return (
        <div className= "flex items-center">
         <Image
-            src={Pokemon.sprites.front_shiny}
+            src={pokemon.sprites.front_shiny}
             width={80}
             height={80}
-            alt={Pokemon.name}
+            alt={pokemon.name}
         />
-        <h2 className="text-2xl mb-4 font-bold">{Pokemon.name}</h2>
+        <h2 className="text-2xl mb-4 font-bold">{pokemon.name}</h2>
        </div> 
     );
 }
